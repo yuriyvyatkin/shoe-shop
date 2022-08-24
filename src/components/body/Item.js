@@ -35,7 +35,7 @@ export default function Item() {
 
     onProductAdd(newProduct);
 
-    navigate('/cart.html');
+    navigate('/cart');
   }
 
   const {
@@ -115,7 +115,7 @@ export default function Item() {
                 >
                   -
                 </button>
-                <span className="btn btn-outline-primary">{count}</span>
+                <button className="btn btn-outline-primary">{count}</button>
                 <button
                   className="btn btn-secondary"
                   onClick={() => setCount(count + 1 <= 10 ? count + 1 : 10)}

@@ -6,7 +6,6 @@ import Nav from './Nav';
 import CardTile from '../../common/CardTile';
 import Download from './Download';
 import useCustomFetch from '../../../functions/useCustomFetch';
-import scrollDown from '../../../functions/scrollDown';
 import NotFound from '../NotFound';
 import Alert from '../../common/Alert';
 
@@ -87,7 +86,6 @@ export default function Catalog() {
           }
 
           setItems((prevState) => [...prevState, ...data]);
-          scrollDown();
         })
         .catch((error) => setLoadingError(error));
     }
@@ -97,6 +95,14 @@ export default function Catalog() {
 
   const offset = searchParams.get('offset');
 
+  let itemsComponent;
+
+  if (items === 'Нет данных для просмотра') {
+    itemsComponent = <Alert type="warning" text={items} />
+  } else {
+    itemsComponent = <CardTile items={items} />
+  }
+
   const catalogBody = (
     <>
       <Nav
@@ -104,7 +110,7 @@ export default function Catalog() {
         searchParams={searchParams}
         onItemClick={handleNavItemClick}
       />
-      <CardTile items={items} />
+      {itemsComponent}
     </>
   );
 
@@ -119,10 +125,12 @@ export default function Catalog() {
 
   const error = loadingError && <Alert type="danger" text={loadingError} />;
 
+  console.log(itemsComponent.type.name === 'Alert');
+
   const catalog = (
     <section className="catalog">
       <h2 className="text-center">Каталог</h2>
-      {location.pathname === '/catalog.html' && (
+      {location.pathname === '/catalog' && (
         <SearchBar
           initialValue={searchParams.get('q')}
           style={{
@@ -147,7 +155,7 @@ export default function Catalog() {
         error || (
           <>
             {catalogBody}
-            {loader}
+            {itemsComponent.type.name !== 'Alert' && loader}
           </>
         )
       ) : (

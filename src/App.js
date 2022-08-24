@@ -9,14 +9,16 @@ import Contacts from './components/body/Contacts';
 import Cart from './components/body/Cart';
 import NotFound from './components/body/NotFound';
 import Footer from './components/footer/Footer';
+import { Helmet } from "react-helmet";
 
 function App() {
   const bannerWithHeader = (
     <Banner
-      src={process.env.PUBLIC_URL + `/assets/images/banner.jpg`}
+      src={process.env.PUBLIC_URL + '/assets/images/banner.jpg'}
       alt="К весне готовы!"
+      link={process.env.PUBLIC_URL + "/catalog?q=бежевый"}
     >
-      <h2 className="banner-header">К весне готовы!</h2>
+      <h2 className="banner-label">К весне готовы!</h2>
     </Banner>
   );
 
@@ -26,15 +28,57 @@ function App() {
       <main className="main container">
         <div className="row">
           <div className="col">
-            {bannerWithHeader}
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/catalog.html" element={<Catalog />} />
-              <Route path="/catalog/:id.html" element={<Item />} />
-              <Route path="/about.html" element={<About />} />
-              <Route path="/contacts.html" element={<Contacts />} />
-              <Route path="/cart.html" element={<Cart />} />
-              <Route path="*" element={<NotFound />} />
+              <Route path="/" element={
+                <>
+                  {bannerWithHeader}
+                  <Helmet>
+                    <title>Bosa Noga</title>
+                  </Helmet>
+                  <Home />
+                </>
+              } />
+              <Route path="/catalog" element={
+                <>
+                  <Helmet>
+                    <title>Bosa Noga | Каталог </title>
+                  </Helmet>
+                  <Catalog />
+                </>
+              } />
+              <Route path="/catalog/:id" element={<Item />} />
+              <Route path="/about" element={
+                <>
+                  <Helmet>
+                    <title>Bosa Noga | О магазине </title>
+                  </Helmet>
+                  <About />
+                </>
+              } />
+              <Route path="/contacts" element={
+                <>
+                  <Helmet>
+                    <title>Bosa Noga | Контакты </title>
+                  </Helmet>
+                  <Contacts />
+                </>
+              } />
+              <Route path="/cart" element={
+                <>
+                  <Helmet>
+                    <title>Bosa Noga | Корзина </title>
+                  </Helmet>
+                  <Cart />
+                </>
+              } />
+              <Route path="*" element={
+                <>
+                  <Helmet>
+                    <title>Ошибка 404</title>
+                  </Helmet>
+                  <NotFound />
+                </>
+              } />
             </Routes>
           </div>
         </div>

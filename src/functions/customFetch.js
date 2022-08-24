@@ -22,8 +22,19 @@ export default function customFetch(url, stopLoading, opts) {
         }
       })
       .then((data) => {
+        console.log('test');
+        console.log(url);
         if (Array.isArray(data) && !data.length) {
-          throw new Error('Нет данных для просмотра');
+          const isOffsetQuery = url.split('=')
+            .slice(0,-1)
+            .pop()
+            .endsWith('offset');
+
+          if (isOffsetQuery) {
+            resolve([]);
+          } else {
+            resolve('Нет данных для просмотра');
+          }
         } else if (typeof data === 'string') {
           reject(data);
         } else {

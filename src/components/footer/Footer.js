@@ -10,17 +10,17 @@ export default function Footer() {
             <h5>Информация</h5>
             <ul className="nav flex-column">
               <li className="nav-item">
-                <CustomNavLink onClick={scrollUp} to="/about.html">
+                <CustomNavLink onClick={scrollUp} to="/about">
                   О магазине
                 </CustomNavLink>
               </li>
               <li className="nav-item">
-                <CustomNavLink onClick={scrollUp} to="/catalog.html">
+                <CustomNavLink onClick={scrollUp} to="/catalog">
                   Каталог
                 </CustomNavLink>
               </li>
               <li className="nav-item">
-                <CustomNavLink onClick={scrollUp} to="/contacts.html">
+                <CustomNavLink onClick={scrollUp} to="/contacts">
                   Контакты
                 </CustomNavLink>
               </li>
@@ -30,13 +30,28 @@ export default function Footer() {
         <div className="col">
           <section>
             <h5>Принимаем к оплате:</h5>
-            <div className="footer-pay">
-              <div className="footer-pay-systems footer-pay-systems-paypal" />
-              <div className="footer-pay-systems footer-pay-systems-master-card" />
-              <div className="footer-pay-systems footer-pay-systems-visa" />
-              <div className="footer-pay-systems footer-pay-systems-yandex" />
-              <div className="footer-pay-systems footer-pay-systems-webmoney" />
-              <div className="footer-pay-systems footer-pay-systems-qiwi" />
+            <div className="cards d-flex">
+              <div className="footer-pay">
+                <div className="footer-pay-systems footer-pay-systems-american-express" />
+              </div>
+              <div className="footer-pay">
+                <div className="footer-pay-systems footer-pay-systems-diners-club" />
+              </div>
+              <div className="footer-pay">
+                <div className="footer-pay-systems footer-pay-systems-discover" />
+              </div>
+              <div className="footer-pay">
+                <div className="footer-pay-systems footer-pay-systems-jcb" />
+              </div>
+              <div className="footer-pay">
+                <div className="footer-pay-systems footer-pay-systems-mastercard" />
+              </div>
+              <div className="footer-pay">
+                <div className="footer-pay-systems footer-pay-systems-mir" />
+              </div>
+              <div className="footer-pay">
+                <div className="footer-pay-systems footer-pay-systems-visa" />
+              </div>
             </div>
           </section>
           <section>

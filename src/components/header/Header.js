@@ -21,7 +21,7 @@ export default function Header() {
     if (searchVisibility && form.query.trim() !== '') {
       setForm({ query: '' });
 
-      navigate(`/catalog.html?q=${form.query}`);
+      navigate(`/catalog?q=${form.query}`);
     }
 
     setSearchVisibility((prevState) => !prevState);
@@ -50,13 +50,13 @@ export default function Header() {
                   <CustomNavLink to="/">Главная</CustomNavLink>
                 </li>
                 <li className="nav-item">
-                  <CustomNavLink to="/catalog.html">Каталог</CustomNavLink>
+                  <CustomNavLink to="/catalog">Каталог</CustomNavLink>
                 </li>
                 <li className="nav-item">
-                  <CustomNavLink to="/about.html">О магазине</CustomNavLink>
+                  <CustomNavLink to="/about">О магазине</CustomNavLink>
                 </li>
                 <li className="nav-item">
-                  <CustomNavLink to="/contacts.html">Контакты</CustomNavLink>
+                  <CustomNavLink to="/contacts">Контакты</CustomNavLink>
                 </li>
               </ul>
               <div>
@@ -77,7 +77,7 @@ export default function Header() {
                     <div className="header-controls-cart-menu">
                       <Link
                         className="header-controls-cart-link"
-                        to="/cart.html"
+                        to="/cart"
                       />
                     </div>
                   </div>
@@ -94,7 +94,7 @@ export default function Header() {
                     name="query"
                     value={form.query}
                     onChange={handleInputChange}
-                    placeholder="Поиск"
+                    placeholder="Ваш запрос"
                   />
                 </form>
               </div>

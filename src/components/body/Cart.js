@@ -44,7 +44,7 @@ export default function Cart() {
         <tr key={index}>
           <td>{index + 1}</td>
           <td>
-            <Link to={`/products/${id}.html`}>{title}</Link>
+            <Link to={`/products/${id}`}>{title}</Link>
           </td>
           <td>{size}</td>
           <td>{count}</td>

@@ -1,19 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic-ext');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&subset=cyrillic-ext');
 
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 html {
   height: 100%;
 }
 
 body {
   height: 100%;
+
   font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
 }
 
-#root {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+input,
+button,
+a.btn {
+  font-size: 1em!important;
 }
 
 a {
@@ -36,10 +44,33 @@ section {
   margin-bottom: 2em;
 }
 
-/* Common Styles */
+h2 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.btn-outline-primary {
+  color: #727e86;
+  border-color: #727e86;
+}
+
+.btn-outline-primary:hover {
+  background-color: #727e86;
+  border-color: #727e86;
+}
+
+.nav-item {
+  font-size: 1.2em;
+}
+
+.nav-link.active {
+  color: #ff0000 !important;
+}
+
 .invisible {
   opacity: 0;
-  transition: all .3s ease;
+
+  transition: all 0.3s ease;
 }
 
 /* Header */
@@ -59,6 +90,18 @@ section {
   background-repeat: no-repeat;
 
   cursor: pointer;
+}
+
+.header-controls-pic:hover {
+  filter: brightness(0.5);
+}
+
+.header-controls-cart:hover .header-controls-cart-full {
+  display: none;
+}
+
+.header-controls-cart:hover .header-controls-cart-link {
+  filter: brightness(0.5);
 }
 
 .header-controls-search {
@@ -114,7 +157,7 @@ section {
   display: block;
   width: 233px;
   height: 38px;
-  padding: 0 20px;
+  padding: 0 40px 0 20px;
 
   text-align: right;
 
@@ -133,12 +176,20 @@ section {
   outline: none;
 }
 
+.navbar-nav .nav-item:not(:first-child) {
+  padding-left: 10px;
+}
+
+.navbar {
+  box-shadow: 0 0 1px 1px #f8f9fa;
+}
+
 /* Banner */
 .banner {
   position: relative;
 }
 
-.banner-header {
+.banner-label {
   position: absolute;
   top: 42px;
   right: 0;
@@ -154,6 +205,10 @@ section {
 
   color: #ffffff;
   background: linear-gradient(270deg, rgba(161, 179, 191, 0.8) 72.59%, rgba(161, 179, 191, 0) 98.05%);
+}
+
+.banner-img {
+  border-radius: 5px;
 }
 
 /* Main */
@@ -222,10 +277,14 @@ section {
 }
 
 /* Catalog */
+.catalog-search-form {
+  height: 60px!important;
+}
+
 .catalog-categories {
   margin-bottom: 2em;
 
-  font-size: 1.3rem;
+  font-size: 1.1em;
 }
 
 .catalog-item-card {
@@ -288,6 +347,12 @@ section {
 /* Footer */
 .footer {
   padding: 0 25px;
+
+  box-shadow: 0 0 1px 1px #f8f9fa;
+}
+
+.footer .nav-link {
+  padding-left: 0;
 }
 
 .footer-pay {
@@ -297,42 +362,49 @@ section {
 }
 
 .footer-pay-systems {
-  width: 46px;
-  height: 28px;
+  float: left;
+  width: 39px;
+  height: 25px;
+  margin-right: 4px;
 
-  background-color: #ffffff;
-  background-image: url(./images/footer-sprite.png);
   background-repeat: no-repeat;
-  border: 2px solid #ffffff;
-  border-radius: 8px;
+  background-position: 0 0;
+  background-size: cover;
+  border: 0;
+
+  text-indent: -9999px;
 }
 
 .footer-pay-systems:not(:first-child) {
   margin-left: 5px;
 }
 
-.footer-pay-systems-paypal {
-  background-position: -2px -6px;
+.footer-pay-systems-american-express {
+  background-image: url(./images/cards/card-american-express.svg);
 }
 
-.footer-pay-systems-master-card {
-  background-position: -54px -8px;
+.footer-pay-systems-diners-club {
+  background-image: url(./images/cards/card-diners-club.svg);
+}
+
+.footer-pay-systems-discover {
+  background-image: url(./images/cards/card-discover.svg);
+}
+
+.footer-pay-systems-jcb {
+  background-image: url(./images/cards/card-jcb.svg);
+}
+
+.footer-pay-systems-mastercard {
+  background-image: url(./images/cards/card-mastercard.svg);
+}
+
+.footer-pay-systems-mir {
+  background-image: url(./images/cards/card-mir.svg);
 }
 
 .footer-pay-systems-visa {
-  background-position: -104px -8px;
-}
-
-.footer-pay-systems-yandex {
-  background-position: -154px -8px;
-}
-
-.footer-pay-systems-webmoney {
-  background-position: -2px -46px;
-}
-
-.footer-pay-systems-qiwi {
-  background-position: -52px -46px;
+  background-image: url(./images/cards/card-visa.svg);
 }
 
 .footer-social-links {
@@ -351,15 +423,17 @@ section {
 }
 
 .footer-social-link-twitter {
-  background-position: -107px -42px;
+  background-position: -5px 0px;
 }
 
 .footer-social-link-vk {
-  background-position: -157px -42px;
+  background-position: -55px 0px;
 }
 
 .footer-social-link:hover {
   cursor: pointer;
+
+  filter: brightness(0.5);
 }
 
 .footer-copyright {
@@ -372,25 +446,4 @@ section {
 
 .footer-contacts-email {
   display: block;
-}
-
-/* Bootstrap */
-.nav-link.active {
-  color: #ff0000 !important;
-}
-
-h2,
-.h2 {
-  margin-top: 2em;
-  margin-bottom: 1.5em;
-}
-
-.btn-outline-primary {
-  color: #727e86;
-  border-color: #727e86;
-}
-
-.btn-outline-primary:hover {
-  background-color: #727e86;
-  border-color: #727e86;
 }
