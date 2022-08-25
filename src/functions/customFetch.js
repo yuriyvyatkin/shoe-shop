@@ -26,7 +26,7 @@ export default function customFetch(url, stopLoading, opts) {
         console.log(url);
         if (Array.isArray(data) && !data.length) {
           const isOffsetQuery = url.split('=')
-            .slice(0,-1)
+            .slice(0, -1)
             .pop()
             .endsWith('offset');
 
