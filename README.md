@@ -1,4 +1,4 @@
-# Дипломный проект курса «React»
+# Дипломная работа курса «React»
 
 [![Build status](https://ci.appveyor.com/api/projects/status/yb5of3w0mf8dkl7l?svg=true)](https://ci.appveyor.com/project/yuriyvyatkin/ra-diploma-project-frontend)
 
