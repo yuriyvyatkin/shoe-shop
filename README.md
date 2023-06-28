@@ -1,12 +1,8 @@
 ## Интернет-магазин обуви
 
-[![Build status](https://ci.appveyor.com/api/projects/status/yb5of3w0mf8dkl7l?svg=true)](https://ci.appveyor.com/project/yuriyvyatkin/ra-diploma-project-frontend)
-
-[Демонстрация](https://yuriyvyatkin.github.io/ra-diploma-project-frontend/)
-
 **🛠️ Стек**
 
-React + React Context + React Router + React Helmet + Bootstrap + AppVeyor + Yarn
+React + React Context + React Router + React Helmet + Bootstrap + Yarn
 
 **📚 Инструкция по работе с проектом**
 
