@@ -6,7 +6,7 @@
 
 **🛠️ Стек**
 
-React + React Context + React Router + React Helmet + Bootstrap
+React + React Context + React Router + React Helmet + Bootstrap + AppVeyor
 
 **📚 Инструкция по работе с проектом**
 
