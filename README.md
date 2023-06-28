@@ -6,7 +6,7 @@
 
 **🛠️ Стек**
 
-React + React Context + React Router + React Helmet + Bootstrap + AppVeyor
+React + React Context + React Router + React Helmet + Bootstrap + AppVeyor + Yarn
 
 **📚 Инструкция по работе с проектом**
 
@@ -23,7 +23,7 @@ cd shop
 ##### 2. Установка зависимостей
 
 ```
-npm install
+yarn install
 ```
 
 ##### 3. Запуск
