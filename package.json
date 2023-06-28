@@ -7,8 +7,6 @@
   "repository": "https://yuriyvyatkin.github.io/ra-diploma-project-frontend/",
   "private": true,
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -23,7 +21,6 @@
     "react-scripts": "4.0.3"
   },
   "devDependencies": {
-    "gh-pages": "5.0.0",
     "html-webpack-plugin": "4"
   },
   "eslintConfig": {
