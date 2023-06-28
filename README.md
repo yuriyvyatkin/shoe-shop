@@ -29,7 +29,7 @@ yarn install
 ##### 3. Запуск
 
 ```
-npm start
+yarn start
 ```
 
 **⚙️ Реализовано**:
