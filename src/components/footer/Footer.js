@@ -2,6 +2,8 @@ import CustomNavLink from '../common/CustomNavLink';
 import scrollUp from '../../functions/scrollUp';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer container bg-light">
       <div className="row">
@@ -56,10 +58,10 @@ export default function Footer() {
           </section>
           <section>
             <div className="footer-copyright">
-              2009-2022 © BosaNoga.ru — модный интернет-магазин обуви и
+              2009-{currentYear} © BosaNoga — модный интернет-магазин обуви и
               аксессуаров. Все права защищены.
               <br />
-              Доставка по всей России!
+              Доставка по всему миру!
             </div>
           </section>
         </div>
