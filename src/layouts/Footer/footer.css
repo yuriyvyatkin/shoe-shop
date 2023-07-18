@@ -1,0 +1,104 @@
+.footer {
+  padding: 0 25px;
+
+  box-shadow: 0 0 1px 1px #f8f9fa;
+}
+
+.footer .nav-link {
+  padding-left: 0;
+}
+
+.pay-card {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 12px auto 0;
+}
+
+.pay-card__img {
+  float: left;
+
+  width: 39px;
+  height: 25px;
+  margin-right: 4px;
+  border: 0;
+
+  text-indent: -9999px;
+
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+}
+
+.pay-card__img:not(:first-child) {
+  margin-left: 5px;
+}
+
+.pay-card .american-express {
+  background-image: url(../../images/cards/card-american-express.svg);
+}
+
+.pay-card .diners-club {
+  background-image: url(../../images/cards/card-diners-club.svg);
+}
+
+.pay-card .discover {
+  background-image: url(../../images/cards/card-discover.svg);
+}
+
+.pay-card .jcb {
+  background-image: url(../../images/cards/card-jcb.svg);
+}
+
+.pay-card .mastercard {
+  background-image: url(../../images/cards/card-mastercard.svg);
+}
+
+.pay-card .mir {
+  background-image: url(../../images/cards/card-mir.svg);
+}
+
+.pay-card .visa {
+  background-image: url(../../images/cards/card-visa.svg);
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links__link {
+  display: inline-block;
+
+  width: 36px;
+  height: 36px;
+  margin: 0 5px;
+  border-radius: 50%;
+
+  background-image: url(../../images/footer-sprite.png);
+  background-repeat: no-repeat;
+}
+
+.social-links__link:hover {
+  filter: brightness(.5);
+  cursor: pointer;
+}
+
+.twitter {
+  background-position: -5px 0;
+}
+
+.vk {
+  background-position: -55px 0;
+}
+
+.copyright {
+  font-size: .8em;
+}
+
+.contacts__phone {
+  display: block;
+}
+
+.contacts__email {
+  display: block;
+}

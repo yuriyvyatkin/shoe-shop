@@ -1,0 +1,13 @@
+.card {
+  height: 100%;
+}
+
+.card__img {
+  padding: 1.25rem;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}

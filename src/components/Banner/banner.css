@@ -1,0 +1,25 @@
+.banner {
+  position: relative;
+}
+
+.banner__label {
+  position: absolute;
+  top: 42px;
+  right: 0;
+  z-index: 5;
+
+  width: 487px;
+  height: 98px;
+
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 98px;
+  text-align: center;
+
+  color: #ffffff;
+  background: linear-gradient(270deg, rgba(161, 179, 191, .8) 72.59%, rgba(161, 179, 191, 0) 98.05%);
+}
+
+.banner__img {
+  border-radius: 5px;
+}
