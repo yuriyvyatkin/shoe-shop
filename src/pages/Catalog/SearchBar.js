@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './search-bar.css';
 
 export default function SearchBar(props) {
   const { initialValue, style, onFormSubmit: handleSubmit } = props;
@@ -17,11 +18,11 @@ export default function SearchBar(props) {
   return (
     <form
       style={style}
-      className="catalog-search-form form-inline"
+      className="search-bar"
       onSubmit={handleSubmit}
     >
       <input
-        className="form-control"
+        className="search-bar__input"
         type="text"
         name="query"
         value={form.query}

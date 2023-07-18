@@ -1,15 +1,15 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
-import CustomNavLink from '../common/CustomNavLink';
-import { AppContext } from '../AppContext';
+import CustomNavLink from '../../components/CustomNavLink';
+import { useCart } from '../../context/CartContext';
+import './header.css';
 
 export default function Header() {
   const [searchVisibility, setSearchVisibility] = useState(false);
   const [form, setForm] = useState({ query: '' });
   const navigate = useNavigate();
   const location = useLocation();
-  const app = useContext(AppContext);
-  const { cart } = app;
+  const { cart } = useCart();
 
   useEffect(() => {
     setSearchVisibility(false);
@@ -34,10 +34,10 @@ export default function Header() {
   }
 
   return (
-    <header className="container">
+    <header className="header container">
       <div className="row">
         <div className="col">
-          <nav className="navbar navbar-expand-sm navbar-light bg-light">
+          <nav className="navbar navbar-expand-sm bg-light">
             <CustomNavLink className="navbar-brand" to="/">
               <img
                 src={process.env.PUBLIC_URL + `/assets/images/header-logo.png`}
@@ -45,7 +45,7 @@ export default function Header() {
               />
             </CustomNavLink>
             <div className="collapse navbar-collapse" id="navbarMain">
-              <ul className="navbar-nav mr-auto">
+              <ul className="nav-items navbar-nav mr-auto">
                 <li className="nav-item">
                   <CustomNavLink to="/">Главная</CustomNavLink>
                 </li>
@@ -60,23 +60,23 @@ export default function Header() {
                 </li>
               </ul>
               <div>
-                <div className="header-controls-pics">
+                <div className="controls">
                   <div
                     data-id="search-expander"
-                    className="header-controls-pic header-controls-search"
+                    className="control control__search"
                     onClick={toggleSearchVisibility}
                   />
-                  <div className="header-controls-pic header-controls-cart">
+                  <div className="control control__cart">
                     <div
-                      className={`header-controls-cart-full ${
-                        !cart.length && 'invisible'
+                      className={`cart__items ${
+                        !cart.length && 'cart__items_invisible'
                       }`}
                     >
                       {cart.length}
                     </div>
-                    <div className="header-controls-cart-menu">
+                    <div>
                       <Link
-                        className="header-controls-cart-link"
+                        className="cart__link"
                         to="/cart"
                       />
                     </div>
@@ -84,13 +84,13 @@ export default function Header() {
                 </div>
                 <form
                   data-id="search-form"
-                  className={`header-controls-search-form form-inline ${
-                    !searchVisibility && 'invisible'
+                  className={`search-form ${
+                    !searchVisibility && 'search-form_invisible'
                   }`}
                   onSubmit={toggleSearchVisibility}
                 >
                   <input
-                    className="form-control"
+                    className="search-form__input"
                     name="query"
                     value={form.query}
                     onChange={handleInputChange}

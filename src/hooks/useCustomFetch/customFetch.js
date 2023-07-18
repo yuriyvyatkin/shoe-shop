@@ -1,4 +1,4 @@
-import NotFound from '../components/body/NotFound'
+import NotFound from '../../pages/NotFound';
 
 export default function customFetch(url, stopLoading, opts) {
   return new Promise((resolve, reject) => {
@@ -22,8 +22,6 @@ export default function customFetch(url, stopLoading, opts) {
         }
       })
       .then((data) => {
-        console.log('test');
-        console.log(url);
         if (Array.isArray(data) && !data.length) {
           const isOffsetQuery = url.split('=')
             .slice(0, -1)

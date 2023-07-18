@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import useCustomFetch from '../../functions/useCustomFetch';
-import Preloader from '../common/Preloader';
-import Catalog from './Catalog/Catalog';
-import CardTile from '../common/CardTile';
+import { useEffect, useState } from 'react';
+import useCustomFetch from '../hooks/useCustomFetch';
+import CardTile from '../components/CardTile';
+import Preloader from '../components/Preloader';
+import Catalog from './Catalog';
 
 export default function Home() {
   const [topItems, setTopItems] = useState([]);
@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="top-sales">
+      <section className="home top-sales">
         <h2 className="text-center">Хиты продаж!</h2>
         {getTopItems.loading ? (
           <Preloader />

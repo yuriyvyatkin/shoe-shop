@@ -1,15 +1,15 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Banner from './components/common/Banner';
-import Header from './components/header/Header';
-import Home from './components/body/Home';
-import Catalog from './components/body/Catalog/Catalog';
-import Item from './components/body/Item';
-import About from './components/body/About';
-import Contacts from './components/body/Contacts';
-import Cart from './components/body/Cart';
-import NotFound from './components/body/NotFound';
-import Footer from './components/footer/Footer';
 import { Helmet } from "react-helmet";
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import Banner from './components/Banner';
+import Footer from './layouts/Footer';
+import Header from './layouts/Header';
+import About from './pages/About';
+import Cart from './pages/Cart';
+import Catalog from './pages/Catalog';
+import Contacts from './pages/Contacts';
+import Home from './pages/Home';
+import Item from './pages/Item';
+import NotFound from './pages/NotFound';
 
 function App() {
   const bannerWithHeader = (
@@ -18,9 +18,10 @@ function App() {
       alt="К весне готовы!"
       link={process.env.PUBLIC_URL + "/catalog?q=бежевый"}
     >
-      <h2 className="banner-label">К весне готовы!</h2>
+      <h2 className="banner__label">К весне готовы!</h2>
     </Banner>
   );
+  const siteName = 'Bosa Noga';
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
@@ -33,7 +34,7 @@ function App() {
                 <>
                   {bannerWithHeader}
                   <Helmet>
-                    <title>Bosa Noga</title>
+                    <title>{siteName}</title>
                   </Helmet>
                   <Home />
                 </>
@@ -41,7 +42,7 @@ function App() {
               <Route path="/catalog" element={
                 <>
                   <Helmet>
-                    <title>Bosa Noga | Каталог </title>
+                    <title>{`${siteName} | Каталог`}</title>
                   </Helmet>
                   <Catalog />
                 </>
@@ -50,7 +51,7 @@ function App() {
               <Route path="/about" element={
                 <>
                   <Helmet>
-                    <title>Bosa Noga | О магазине </title>
+                    <title>{`${siteName} | О магазине`}</title>
                   </Helmet>
                   <About />
                 </>
@@ -58,7 +59,7 @@ function App() {
               <Route path="/contacts" element={
                 <>
                   <Helmet>
-                    <title>Bosa Noga | Контакты </title>
+                    <title>{`${siteName} | Контакты`}</title>
                   </Helmet>
                   <Contacts />
                 </>
@@ -66,7 +67,7 @@ function App() {
               <Route path="/cart" element={
                 <>
                   <Helmet>
-                    <title>Bosa Noga | Корзина </title>
+                    <title>{`${siteName} | Корзина`}</title>
                   </Helmet>
                   <Cart />
                 </>

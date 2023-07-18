@@ -1,13 +1,13 @@
-import { useState, useRef, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
-import Preloader from '../../common/Preloader';
-import SearchBar from './SearchBar';
-import Nav from './Nav';
-import CardTile from '../../common/CardTile';
-import Download from './Download';
-import useCustomFetch from '../../../functions/useCustomFetch';
+import Alert from '../../components/Alert';
+import CardTile from '../../components/CardTile';
+import Preloader from '../../components/Preloader';
+import useCustomFetch from '../../hooks/useCustomFetch';
 import NotFound from '../NotFound';
-import Alert from '../../common/Alert';
+import DownloadBtn from './DownloadBtn';
+import Categories from './Categories';
+import SearchBar from './SearchBar';
 
 export default function Catalog() {
   const location = useLocation();
@@ -105,7 +105,7 @@ export default function Catalog() {
 
   const catalogBody = (
     <>
-      <Nav
+      <Categories
         categories={categories}
         searchParams={searchParams}
         onItemClick={handleNavItemClick}
@@ -115,7 +115,7 @@ export default function Catalog() {
   );
 
   const loader = (
-    <Download
+    <DownloadBtn
       itemsLength={items.length}
       cardsSet={cardsSet}
       onButtonClick={handleDownloadButtonClick}
@@ -124,8 +124,6 @@ export default function Catalog() {
   );
 
   const error = loadingError && <Alert type="danger" text={loadingError} />;
-
-  console.log(itemsComponent.type.name === 'Alert');
 
   const catalog = (
     <section className="catalog">

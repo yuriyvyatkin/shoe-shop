@@ -1,4 +1,4 @@
-export default function Download(props) {
+export default function DownloadBtn(props) {
   const {
     itemsLength,
     cardsSet,
@@ -8,7 +8,7 @@ export default function Download(props) {
 
   return (
     <div
-      className="text-center"
+      className="download-btn text-center"
       style={{ display: itemsLength >= cardsSet ? 'block' : 'none' }}
     >
       <button

@@ -1,9 +1,11 @@
-import { useState, useContext, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import useCustomFetch from '../../functions/useCustomFetch';
-import { AppContext } from '../AppContext';
-import Preloader from '../common/Preloader';
-import Alert from '../common/Alert';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import useCustomFetch from '../../hooks/useCustomFetch';
+import { useCart } from '../../context/CartContext';
+import Alert from '../../components/Alert';
+import Preloader from '../../components/Preloader';
+import './item.css';
 
 export default function Item() {
   const [itemData, setItemData] = useState({});
@@ -12,15 +14,13 @@ export default function Item() {
   const [loadingError, setLoadingError] = useState(null);
   const params = useParams();
   const navigate = useNavigate();
-  const app = useContext(AppContext);
-  const { onProductAdd } = app;
+  const { onProductAdd } = useCart();
   const { getItem } = useCustomFetch();
 
   useEffect(() => {
     getItem(params.id)
       .then((data) => setItemData(data))
       .catch((error) => setLoadingError(error));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function handleButtonClick() {
@@ -90,13 +90,13 @@ export default function Item() {
             <p>
               Размеры в наличии:&nbsp;
               {sizes &&
-                sizes.map(({ size, avalible }) => {
+                sizes.map(({ size, avalible: available }) => {
                   return (
-                    avalible && (
+                    available && (
                       <span
                         key={size}
-                        className={`catalog-item-size ${
-                          chosenSize === size && 'selected'
+                        className={`item-size ${
+                          chosenSize === size && 'item-size_selected'
                         }`}
                         onClick={() => setChosenSize(size)}
                       >
@@ -105,6 +105,7 @@ export default function Item() {
                     )
                   );
                 })}
+              *
             </p>
             <p>
               Количество:
@@ -113,7 +114,7 @@ export default function Item() {
                   className="btn btn-secondary"
                   onClick={() => setCount(count - 1 >= 1 ? count - 1 : 1)}
                 >
-                  -
+                  ‒
                 </button>
                 <button className="btn btn-outline-primary">{count}</button>
                 <button
@@ -125,6 +126,11 @@ export default function Item() {
               </span>
             </p>
           </div>
+          <span className="text-muted">
+            {sizes
+              ? '* кликните на размер и выберите количество'
+              : '* доступных размеров нет'}
+          </span>
           <button
             className="btn btn-danger btn-block btn-lg"
             onClick={handleButtonClick}

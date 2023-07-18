@@ -1,5 +1,6 @@
-import CustomNavLink from '../common/CustomNavLink';
-import scrollUp from '../../functions/scrollUp';
+import CustomNavLink from '../../components/CustomNavLink';
+import scrollUp from '../../utils/scrollUp';
+import './footer.css';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -32,32 +33,32 @@ export default function Footer() {
         <div className="col">
           <section>
             <h5>Принимаем к оплате:</h5>
-            <div className="cards d-flex">
-              <div className="footer-pay">
-                <div className="footer-pay-systems footer-pay-systems-american-express" />
+            <div className="pay-cards d-flex">
+              <div className="pay-card">
+                <div className="pay-card__img american-express" />
               </div>
-              <div className="footer-pay">
-                <div className="footer-pay-systems footer-pay-systems-diners-club" />
+              <div className="pay-card">
+                <div className="pay-card__img diners-club" />
               </div>
-              <div className="footer-pay">
-                <div className="footer-pay-systems footer-pay-systems-discover" />
+              <div className="pay-card">
+                <div className="pay-card__img discover" />
               </div>
-              <div className="footer-pay">
-                <div className="footer-pay-systems footer-pay-systems-jcb" />
+              <div className="pay-card">
+                <div className="pay-card__img jcb" />
               </div>
-              <div className="footer-pay">
-                <div className="footer-pay-systems footer-pay-systems-mastercard" />
+              <div className="pay-card">
+                <div className="pay-card__img mastercard" />
               </div>
-              <div className="footer-pay">
-                <div className="footer-pay-systems footer-pay-systems-mir" />
+              <div className="pay-card">
+                <div className="pay-card__img mir" />
               </div>
-              <div className="footer-pay">
-                <div className="footer-pay-systems footer-pay-systems-visa" />
+              <div className="pay-card">
+                <div className="pay-card__img visa" />
               </div>
             </div>
           </section>
           <section>
-            <div className="footer-copyright">
+            <div className="copyright">
               2009-{currentYear} © BosaNoga — модный интернет-магазин обуви и
               аксессуаров. Все права защищены.
               <br />
@@ -66,23 +67,23 @@ export default function Footer() {
           </section>
         </div>
         <div className="col text-right">
-          <section className="footer-contacts">
+          <section className="contacts">
             <h5>Контакты:</h5>
-            <a className="footer-contacts-phone" href="tel:+7-495-790-35-03">
-              +7 495 79 03 5 03
+            <a className="contacts__phone" href="tel:+7-495-55-55-55">
+              +7 (495) 55-55-55
             </a>
-            <span className="footer-contacts-working-hours">
-              Ежедневно: с 09-00 до 21-00
+            <span className="contacts__working-hours">
+              Ежедневно: с 09:00 до 21:00
             </span>
             <a
-              className="footer-contacts-email"
+              className="contacts__email"
               href="mailto:office@bosanoga.ru"
             >
               office@bosanoga.ru
             </a>
-            <div className="footer-social-links">
-              <div className="footer-social-link footer-social-link-twitter" />
-              <div className="footer-social-link footer-social-link-vk" />
+            <div className="social-links">
+              <div className="social-links__link vk" />
+              <div className="social-links__link twitter" />
             </div>
           </section>
         </div>

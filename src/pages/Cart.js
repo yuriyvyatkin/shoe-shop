@@ -1,15 +1,14 @@
-import { useState, useContext } from 'react';
-import useCustomFetch from '../../functions/useCustomFetch';
-import { AppContext } from '../AppContext';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Alert from '../common/Alert';
-import Preloader from '../common/Preloader';
+import useCustomFetch from '../hooks/useCustomFetch';
+import { useCart } from '../context/CartContext';
+import Alert from '../components/Alert';
+import Preloader from '../components/Preloader';
 
 export default function Cart() {
   const [response, setResponse] = useState(null);
   const { postItems } = useCustomFetch();
-  const app = useContext(AppContext);
-  const { cart, onProductDelete, onCartClear } = app;
+  const { cart, onProductDelete, onCartClear } = useCart();
   let cartItems = null;
   let totalPrice = 0;
 
