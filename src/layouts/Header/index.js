@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
-import CustomNavLink from '../../components/CustomNavLink';
-import { useCart } from '../../context/CartContext';
+import CustomNavLink from '@/components/CustomNavLink';
+import { useCart } from '@/context/CartContext';
 import './header.css';
 
 export default function Header() {
@@ -40,7 +40,7 @@ export default function Header() {
           <nav className="navbar navbar-expand-sm bg-light">
             <CustomNavLink className="navbar-brand" to="/">
               <img
-                src={process.env.PUBLIC_URL + `/assets/images/header-logo.png`}
+                src={'@/../assets/images/logo.jpg'}
                 alt="Bosa Noga"
               />
             </CustomNavLink>

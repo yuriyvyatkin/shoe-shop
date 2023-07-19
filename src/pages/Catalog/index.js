@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
-import Alert from '../../components/Alert';
-import CardTile from '../../components/CardTile';
-import Preloader from '../../components/Preloader';
-import useCustomFetch from '../../hooks/useCustomFetch';
-import NotFound from '../NotFound';
+import Alert from '@/components/Alert';
+import CardTile from '@/components/CardTile';
+import Preloader from '@/components/Preloader';
+import useCustomFetch from '@/hooks/useCustomFetch';
+import NotFound from '@/pages/NotFound';
 import DownloadBtn from './DownloadBtn';
 import Categories from './Categories';
 import SearchBar from './SearchBar';
@@ -89,8 +89,6 @@ export default function Catalog() {
         })
         .catch((error) => setLoadingError(error));
     }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   const offset = searchParams.get('offset');

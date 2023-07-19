@@ -1,3 +1,4 @@
+import React from 'react';
 import { Helmet } from "react-helmet";
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Banner from './components/Banner';
@@ -14,9 +15,9 @@ import NotFound from './pages/NotFound';
 function App() {
   const bannerWithHeader = (
     <Banner
-      src={process.env.PUBLIC_URL + '/assets/images/banner.jpg'}
+      src={'@/../assets/images/banner.jpg'}
       alt="К весне готовы!"
-      link={process.env.PUBLIC_URL + "/catalog?q=бежевый"}
+      link={'/catalog?q=бежевый'}
     >
       <h2 className="banner__label">К весне готовы!</h2>
     </Banner>
@@ -24,7 +25,7 @@ function App() {
   const siteName = 'Bosa Noga';
 
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <Header />
       <main className="main container">
         <div className="row">

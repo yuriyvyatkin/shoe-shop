@@ -19,7 +19,7 @@
   height: 32px;
   margin: 0 10px;
 
-  background-image: url(../../images/header-controls-sprite.png);
+  background-image: url(@/images/sprites/controls.png);
   background-repeat: no-repeat;
 
   cursor: pointer;

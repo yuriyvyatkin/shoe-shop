@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import useCustomFetch from '../hooks/useCustomFetch';
-import CardTile from '../components/CardTile';
-import Preloader from '../components/Preloader';
+import useCustomFetch from '@/hooks/useCustomFetch';
+import CardTile from '@/components/CardTile';
+import Preloader from '@/components/Preloader';
 import Catalog from './Catalog';
 
 export default function Home() {
@@ -17,8 +17,6 @@ export default function Home() {
         setTopItems(data);
       })
       .catch((error) => setLoadingError(error));
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

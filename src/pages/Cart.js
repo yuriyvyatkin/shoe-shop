@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import useCustomFetch from '../hooks/useCustomFetch';
-import { useCart } from '../context/CartContext';
-import Alert from '../components/Alert';
-import Preloader from '../components/Preloader';
+import useCustomFetch from '@/hooks/useCustomFetch';
+import { useCart } from '@/context/CartContext';
+import Alert from '@/components/Alert';
+import Preloader from '@/components/Preloader';
 
 export default function Cart() {
   const [response, setResponse] = useState(null);

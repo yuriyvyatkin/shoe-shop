@@ -35,31 +35,31 @@
 }
 
 .pay-card .american-express {
-  background-image: url(../../images/cards/card-american-express.svg);
+  background-image: url(@/images/cards/american-express.svg);
 }
 
 .pay-card .diners-club {
-  background-image: url(../../images/cards/card-diners-club.svg);
+  background-image: url(@/images/cards/diners-club.svg);
 }
 
 .pay-card .discover {
-  background-image: url(../../images/cards/card-discover.svg);
+  background-image: url(@/images/cards/discover.svg);
 }
 
 .pay-card .jcb {
-  background-image: url(../../images/cards/card-jcb.svg);
+  background-image: url(@/images/cards/jcb.svg);
 }
 
 .pay-card .mastercard {
-  background-image: url(../../images/cards/card-mastercard.svg);
+  background-image: url(@/images/cards/mastercard.svg);
 }
 
 .pay-card .mir {
-  background-image: url(../../images/cards/card-mir.svg);
+  background-image: url(@/images/cards/mir.svg);
 }
 
 .pay-card .visa {
-  background-image: url(../../images/cards/card-visa.svg);
+  background-image: url(@/images/cards/visa.svg);
 }
 
 .social-links {
@@ -74,7 +74,7 @@
   margin: 0 5px;
   border-radius: 50%;
 
-  background-image: url(../../images/footer-sprite.png);
+  background-image: url(@/images/sprites/socials.png);
   background-repeat: no-repeat;
 }
 
@@ -84,11 +84,11 @@
 }
 
 .twitter {
-  background-position: -5px 0;
+  background-position: 0 0;
 }
 
 .vk {
-  background-position: -55px 0;
+  background-position: -40px 0;
 }
 
 .copyright {

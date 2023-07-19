@@ -1,4 +1,4 @@
-import NotFound from '../../pages/NotFound';
+import NotFound from '@/pages/NotFound';
 
 export default function customFetch(url, stopLoading, opts) {
   return new Promise((resolve, reject) => {

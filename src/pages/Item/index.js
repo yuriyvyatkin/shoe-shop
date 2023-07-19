@@ -1,10 +1,9 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import useCustomFetch from '../../hooks/useCustomFetch';
-import { useCart } from '../../context/CartContext';
-import Alert from '../../components/Alert';
-import Preloader from '../../components/Preloader';
+import useCustomFetch from '@/hooks/useCustomFetch';
+import { useCart } from '@/context/CartContext';
+import Alert from '@/components/Alert';
+import Preloader from '@/components/Preloader';
 import './item.css';
 
 export default function Item() {

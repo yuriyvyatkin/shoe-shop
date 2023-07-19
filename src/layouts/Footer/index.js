@@ -1,5 +1,5 @@
-import CustomNavLink from '../../components/CustomNavLink';
-import scrollUp from '../../utils/scrollUp';
+import CustomNavLink from '@/components/CustomNavLink';
+import scrollUp from '@/utils/scrollUp';
 import './footer.css';
 
 export default function Footer() {
