@@ -10,3 +10,6 @@ yarn-error.log*
 
 # CSS comb
 .csscomb.json
+
+# misc
+package-lock.json
