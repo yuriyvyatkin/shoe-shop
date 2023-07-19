@@ -1,6 +1,7 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
@@ -24,6 +25,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       React: 'react',
     }),
+    new MiniCssExtractPlugin(),
     new Dotenv(),
   ],
   module: {
@@ -43,8 +45,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: /node_modules\/(?!\/bootstrap\/dist\/css\/bootstrap\.css)/,
-        use: ['style-loader', 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
   },
