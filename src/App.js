@@ -1,4 +1,3 @@
-import React from 'react';
 import { Helmet } from "react-helmet";
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Banner from './components/Banner';
