@@ -1,3 +1,4 @@
+import bannerImage from '@/images/banner.jpg';
 import { Helmet } from "react-helmet";
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Banner from './components/Banner';
@@ -14,7 +15,7 @@ import NotFound from './pages/NotFound';
 function App() {
   const bannerWithHeader = (
     <Banner
-      src={'@/../assets/images/banner.jpg'}
+      src={bannerImage}
       alt="К весне готовы!"
       link={'/catalog?q=бежевый'}
     >

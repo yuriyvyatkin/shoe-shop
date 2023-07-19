@@ -2,13 +2,27 @@ const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          format: {
+            comments: false,
+          },
+        },
+        extractComments: false,
+      }),
+    ],
+  },
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@': path.resolve(__dirname, 'src')
     },
   },
   entry: './src/index.js',
@@ -18,15 +32,23 @@ module.exports = {
   },
   devtool: 'cheap-module-source-map',
   plugins: [
-    new htmlWebpackPlugin({
-      template: './public/index.html',
-      favicon: './public/favicon.ico',
-    }),
     new webpack.ProvidePlugin({
       React: 'react',
     }),
     new MiniCssExtractPlugin(),
     new Dotenv(),
+    new htmlWebpackPlugin({
+      template: './public/index.html',
+      favicon: './public/favicon.ico',
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './public/robots.txt',
+          to: '[name][ext]',
+        }
+      ],
+    }),
   ],
   module: {
     rules: [
@@ -42,6 +64,10 @@ module.exports = {
             ],
           },
         },
+      },
+      {
+        test: /\.(png|jpe?g|svg)$/i,
+        type: 'asset/resource',
       },
       {
         test: /\.css$/,
