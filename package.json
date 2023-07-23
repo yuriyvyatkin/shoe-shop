@@ -8,8 +8,8 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --mode development --open --hot",
-    "start": "serve -s build",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "start": "serve -s build"
   },
   "dependencies": {
     "bootstrap": "4.3.1",

@@ -25,6 +25,10 @@ yarn install
 ##### 3. Запуск
 
 ```
+yarn build
+```
+
+```
 yarn start
 ```
 
