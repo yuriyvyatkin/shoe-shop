@@ -2,7 +2,7 @@ import NotFound from '@/pages/NotFound';
 
 export default function customFetch(url, stopLoading, opts) {
   return new Promise((resolve, reject) => {
-    fetch(process.env.REACT_APP_BASE_URL + url, {
+    fetch(process.env.REACT_APP_BACKEND_URL + url, {
       ...opts,
     })
       .then((response) => {
