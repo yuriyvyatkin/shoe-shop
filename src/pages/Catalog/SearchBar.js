@@ -26,7 +26,7 @@ export default function SearchBar(props) {
         type="text"
         name="query"
         value={form.query}
-        placeholder="Введите часть названия или цвет обуви"
+        placeholder="Введите часть названия или цвет обуви и нажмите Enter"
         onInput={handleInputChange}
       />
     </form>
